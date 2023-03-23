@@ -21,5 +21,5 @@ public class AuthenticationAccessDeniedHandler implements AccessDeniedHandler {
         out.write("权限不足,请联系管理员!");
         out.flush();
         out.close();
-    }
+    }//自定义拦截器，避免用户访问管理员的接口
 }

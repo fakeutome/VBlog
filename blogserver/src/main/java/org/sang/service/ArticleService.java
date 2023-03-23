@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 @Transactional
 public class ArticleService {
-    @Autowired
+    @Autowired//注入
     ArticleMapper articleMapper;
     @Autowired
     TagsMapper tagsMapper;

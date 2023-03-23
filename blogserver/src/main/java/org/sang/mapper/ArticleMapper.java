@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Mapper
 public interface ArticleMapper {
-    int addNewArticle(Article article);
+    int addNewArticle(Article article);//
 
     int updateArticle(Article article);
 

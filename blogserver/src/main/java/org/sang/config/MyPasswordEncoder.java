@@ -1,5 +1,7 @@
 package org.sang.config;
 
+import org.sang.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
@@ -17,11 +19,13 @@ import org.springframework.util.DigestUtils;
 public class MyPasswordEncoder implements PasswordEncoder {
     @Override
     public String encode(CharSequence rawPassword) {
-        return DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes());
+        return DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes());//密码加密
     }
 
     @Override
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
+        //return true;
+        System.out.println(encodedPassword.equals(DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes())));
         return encodedPassword.equals(DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes()));
-    }
+    }//密码的匹配
 }

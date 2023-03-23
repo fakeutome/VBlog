@@ -26,7 +26,7 @@ public class LoginRegController {
     public RespBean loginSuccess() {
         return new RespBean("success", "登录成功!");
     }
-
+//给出提示json
     /**
      * 如果自动跳转到这个页面，说明用户未登录，返回相应的提示即可
      * <p>
