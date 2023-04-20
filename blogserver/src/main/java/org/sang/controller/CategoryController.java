@@ -2,6 +2,7 @@ package org.sang.controller;
 
 import org.sang.bean.Category;
 import org.sang.bean.RespBean;
+import org.sang.controller.controllerIn.CategoryControllerIn;
 import org.sang.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +17,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin/category")
-public class CategoryController {
+public class CategoryController implements CategoryControllerIn {
     @Autowired
     CategoryService categoryService;
 

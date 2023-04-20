@@ -3,6 +3,7 @@ package org.sang.service;
 import org.sang.bean.Article;
 import org.sang.mapper.ArticleMapper;
 import org.sang.mapper.TagsMapper;
+import org.sang.service.serviceInterface.ArticleServiceIn;
 import org.sang.utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class ArticleService {
+public class ArticleService implements ArticleServiceIn {
     @Autowired//注入
     ArticleMapper articleMapper;
     @Autowired

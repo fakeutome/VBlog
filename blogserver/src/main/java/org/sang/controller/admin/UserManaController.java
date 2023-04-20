@@ -3,6 +3,7 @@ package org.sang.controller.admin;
 import org.sang.bean.RespBean;
 import org.sang.bean.Role;
 import org.sang.bean.User;
+import org.sang.controller.controllerIn.UserManaControllerIn;
 import org.sang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin")
-public class UserManaController {
+public class UserManaController implements UserManaControllerIn {
     @Autowired
     UserService userService;
 

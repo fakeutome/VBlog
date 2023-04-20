@@ -2,6 +2,7 @@ package org.sang.controller.admin;
 
 import org.sang.bean.Article;
 import org.sang.bean.RespBean;
+import org.sang.controller.controllerIn.AdminControllerIn;
 import org.sang.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/admin")//接受来自网络端到/admin的访问
-public class AdminController {
+public class AdminController implements AdminControllerIn {
     @Autowired
     ArticleService articleService;
 

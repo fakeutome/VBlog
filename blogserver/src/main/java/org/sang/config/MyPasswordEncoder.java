@@ -16,16 +16,14 @@ import org.springframework.util.DigestUtils;
  * @Gitee https://gitee.com/lenve
  */
 @Component
-public class MyPasswordEncoder implements PasswordEncoder {
+public class MyPasswordEncoder implements PasswordEncoder {//密码加密
     @Override
     public String encode(CharSequence rawPassword) {
-        return DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes());//密码加密
+        return DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes());//md5加密
     }
 
     @Override
-    public boolean matches(CharSequence rawPassword, String encodedPassword) {
-        //return true;
-        System.out.println(encodedPassword.equals(DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes())));
-        return encodedPassword.equals(DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes()));
+    public boolean matches(CharSequence rawPassword, String encodedPassword) {//密码的匹配
+        return encodedPassword.equals(DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes()));//
     }//密码的匹配
 }

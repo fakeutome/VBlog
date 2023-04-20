@@ -3,7 +3,9 @@ package org.sang.controller;
 import org.apache.commons.io.IOUtils;
 import org.sang.bean.Article;
 import org.sang.bean.RespBean;
+import org.sang.controller.controllerIn.ArticleControllerIn;
 import org.sang.service.ArticleService;
+import org.sang.service.serviceInterface.ArticleServiceIn;
 import org.sang.utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +23,7 @@ import java.util.*;
  */
 @RestController
 @RequestMapping("/article")
-public class ArticleController {
+public class ArticleController implements ArticleControllerIn {
 
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 

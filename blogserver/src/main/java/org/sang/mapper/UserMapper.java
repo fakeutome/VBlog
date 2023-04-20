@@ -18,9 +18,9 @@ public interface UserMapper {
     long reg(User user);
 
     int updateUserEmail(@Param("email") String email, @Param("id") Long id);
-
+    //根据昵称查询用户
     List<User> getUserByNickname(@Param("nickname") String nickname);
-
+    //根据id查询用户
     List<Role> getAllRole();
 
     int updateUserEnabled(@Param("enabled") Boolean enabled, @Param("uid") Long uid);

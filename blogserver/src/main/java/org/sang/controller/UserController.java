@@ -1,6 +1,7 @@
 package org.sang.controller;
 
 import org.sang.bean.RespBean;
+import org.sang.controller.controllerIn.UserControllerIn;
 import org.sang.service.UserService;
 import org.sang.utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import java.util.List;
  * Created by sang on 2017/12/24.
  */
 @RestController
-public class UserController {
+public class UserController implements UserControllerIn {
 
     @Autowired
     UserService userService;
@@ -39,7 +40,7 @@ public class UserController {
     public Boolean isAdmin() {
         List<GrantedAuthority> authorities = Util.getCurrentUser().getAuthorities();
         for (GrantedAuthority authority : authorities) {
-            if (authority.getAuthority().contains("超级管理员")) {
+            if (authority.getAuthority().contains("SuperAdmin")) {
                 return true;
             }
         }

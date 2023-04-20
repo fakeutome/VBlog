@@ -2,6 +2,7 @@ package org.sang.controller;
 
 import org.sang.bean.RespBean;
 import org.sang.bean.User;
+import org.sang.controller.controllerIn.loginRegControllerIn;
 import org.sang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by sang on 2017/12/17.
  */
 @RestController
-public class LoginRegController {
+public class LoginRegController implements loginRegControllerIn {
 
     @Autowired
     UserService userService;

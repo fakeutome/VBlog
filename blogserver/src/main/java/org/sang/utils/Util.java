@@ -9,6 +9,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 public class Util {
     public static User getCurrentUser() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return user;
+        return user;//这里的user就是当前登录的用户
     }
 }
